@@ -1,18 +1,18 @@
 'use strict';
-import Hello from '../components/hello.jsx';
+import AddTodo from '../components/add-todo.jsx';
 import {connect} from 'react-redux';
 import * as actions from '../actions';
 
 function mapStateToProps(state) {
   return {
-    fruit: state.fruit
+    todos: state.todos
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    onDeleteFruit: (name) => dispatch(actions.deleteFruit(name))
+    onAdd: (todos) => dispatch(actions.onAdd(todos))
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Hello);
+export default connect(mapStateToProps, mapDispatchToProps)(AddTodo);
